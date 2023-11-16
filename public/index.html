@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import '/bundle.js';
+    </script>
+</head>
+
+<body>
+    <!-- <my-svelte-wc class="test" testattribute="Das ist ein Test vom Attribute!"> </my-svelte-wc> -->
+    <my-svelte-wc class="test"></my-svelte-wc>
+    <script>
+        //Working
+        // customElements.whenDefined('my-svelte-wc').then(() => {
+        //     let mySvelteWc = document.querySelector('.test');
+        //     mySvelteWc.test = 'This is the workaround with "whenDefined"';
+        // });
+
+        //NOT working
+        let mySvelteWc = document.querySelector('.test');
+        mySvelteWc.test = 'Properties are not mapped.';
+    </script>
+</body>
+
+</html>
